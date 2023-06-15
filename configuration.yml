@@ -1,1 +1,13 @@
-
+---
+- hosts: all
+  become: true
+  become_method: sudo 
+  tasks:
+  - name: 1. install httpd.
+    apt: name=httpd state=latest
+  - name: 2. install git.
+    apt: name=git state=latest
+  - name: 3. docker.io.
+    apt: name=docker state=latest
+    
+    
