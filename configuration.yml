@@ -9,5 +9,8 @@
     apt: name=git state=latest
   - name: 3. docker.io.
     apt: name=docker state=latest
+  - name: 4. start the httpd service.
+    service: name=httpd state=started
+    
     
     
