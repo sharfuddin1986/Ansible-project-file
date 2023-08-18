@@ -1,0 +1,25 @@
+
+step-1
+         Take Aws Ec2 instance with Ubuntu 22.04
+         After login follow the below link instruction.
+         https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html 
+         sudo apt update
+         sudo apt install software-properties-common
+         sudo add-apt-repository --yes --update ppa:ansible/ansible
+         sudo apt install ansible
+step-2
+         Run command with ssh-keygen but use ubuntu user ( dont use root user)
+         copy the all file contain of id_rsa.pub  (sudo cat /home/ubuntu/.ssh/id_rsa.pub)
+
+step-3
+         Go to the host file entry for slave machine  /etc/ansible
+         Sudo nano hosts
+         Entry the host machine of ip
+
+
+
+
+
+
+
+Note-Use Ubuntu User to 
