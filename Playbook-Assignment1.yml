@@ -1,0 +1,20 @@
+
+######################################################
+# INSTALL JAVA IN SLAVE1 NODE BY PLAYBOOK
+# INSTALL MYSQL SERVER IN SLAVE2 NODE BY PLAYBOOK
+# ####################################################
+
+---
+- name: task for slave1 node
+  hosts: slave1
+  become: true
+  tasks:
+  - name: installing java
+    apt: name=openjdk-11-jdk state=latest
+
+- name: task for slave2 node
+  hosts: slave2
+  become: true
+  tasks:
+  - name: installing mysql
+    apt: name=mysql-server state=latest
