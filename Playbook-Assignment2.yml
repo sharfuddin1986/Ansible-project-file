@@ -1,5 +1,19 @@
 # THIS YAML FILE EXECUTE A SHELL SCRIPT IN TWO SLAVE MACHINE
 
+
+ Step1-create a file add_text.sh in Ansible master machine and write script.
+       #sudo nano add_text.sh
+       
+       #!/bin/bash
+       echo "the txt has been added by custom script" >> /tmp/1.txt
+       
+Step2- create a playbook and add group name production for run this particular script.
+
+       # sudo nano run_script.yml
+       # sudo ansible-playbook run_script.yml --syntax-check
+       # 
+ 
+
 ---
 - name: task for assgin2 on slave1
   hosts: slave1
