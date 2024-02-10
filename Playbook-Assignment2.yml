@@ -12,7 +12,9 @@ Step2- create a playbook and add group name production for run this particular s
        # sudo nano run_script.yml
        # ansible-playbook run_script.yml --syntax-check
        # ansible-playbook run_script.yml
- 
+
+
+      After that automatically created file in slave machine 
 
 
 ---
