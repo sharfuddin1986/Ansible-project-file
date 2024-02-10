@@ -10,21 +10,25 @@
 Step2- create a playbook and add group name production for run this particular script.
 
        # sudo nano run_script.yml
-       # sudo ansible-playbook run_script.yml --syntax-check
-       # 
+       # ansible-playbook run_script.yml --syntax-check
+       # ansible-playbook run_script.yml
  
 
----
-- name: task for assgin2 on slave1
-  hosts: slave1
-  become: true
-  tasks:
-  - name: running a script on slave1
-    script: assign2.sh
 
-- name: task for assgin2 on slave2
-  hosts: slave2
-  become: true
+---
+- name: Run custom script and add Ubuntu user
+  hosts: production
+  become: yes  # To execute tasks with root privileges
+
   tasks:
-  - name: running a script on slave1
-    script: assign2.sh
+    - name: Transfer script to target hosts
+      copy:
+        src: add_text.sh
+        dest: /tmp/add_text.sh
+        mode: '0755'
+      become: yes
+
+    - name: Run custom script
+      shell: /tmp/add_text.sh
+      become: yes
+
