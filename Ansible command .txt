@@ -1,0 +1,63 @@
+1. ansible-playbook: Executes Ansible playbooks.
+ex: ansible-playbook -i <inventory_file> <playbook.yml>
+
+2. ansible: Runs ad-hoc commands or tasks.
+ex: ansible all -m copy -a "src=/path/to/local/file dest=/path/to/remote/file"
+ansible all -m yum -a "name=httpd state=latest"
+
+3. ansible-galaxy: Manages Ansible roles.
+ex: ansible-galaxy install <role_name>
+
+4. ansible-vault: Manages encrypted data within Ansible.
+ex: ansible-vault encrypt <file>
+
+5. ansible-galaxy init role_name: Initializes a new Ansible role scaffold.
+ex: ansible-galaxy init <role_name>
+
+6. ansible-inventory: Shows Ansible's inventory.
+ex: ansible-inventory --list -i /path/to/inventory/hosts
+
+7. ansible-config: Manages Ansible configuration.
+ex: ansible-config list, ansible-config view
+
+8. ansible-pull: Pulls playbooks from a version control system and executes them locally.
+ex: ansible-pull -U <repository_url> <playbook.yml>
+
+9. ansible-playbook --syntax-check: Checks playbook syntax without executing.
+ex: ansible-playbook --syntax-check <playbook.yml>
+
+10. ansible-playbook --list-hosts: Lists hosts defined in a playbook.
+ex: ansible-playbook --list-hosts playbook.yml
+
+11. ansible-playbook --tags: Runs specific tagged tasks within a playbook.
+ex: ansible-playbook --tags=tag1,tag2 playbook.yml
+
+12. ansible-playbook --limit: Limits playbook execution to specific hosts or groups.
+ex: ansible-playbook --limit=<host_pattern> <playbook.yml>
+
+13.ansible-vault edit: Edits an encrypted file.
+ex: ansible-vault edit secrets.yml
+
+14. ansible-doc: Displays documentation for Ansible modules.
+ex: ansible-doc <module_name>
+
+15. ansible-config view: Displays the current Ansible configuration.
+ex: ansible-config view
+
+16. ansible-config dump: Dumps the current Ansible configuration variables.
+ex: ansible-config dump
+
+17. ansible-config list: Lists configuration settings.
+ex: ansible-config list
+
+18. ansible-console: Starts an interactive console for executing Ansible tasks.
+ex: ansible-console
+
+19. ansible-lint: Lints Ansible playbooks for best practices and potential errors.
+ex: ansible-lint <playbook.yml>
+
+20. ansible-vault encrypt_string: Encrypts a string for use in a playbook.
+ex: ansible-vault encrypt_string <string>
+
+21. ansible-vault rekey: Rekeys an encrypted file with a new password.
+ex: ansible-vault rekey <file>
